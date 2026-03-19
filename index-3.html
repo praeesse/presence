@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- PRIMARY SEO -->
+  <title>Presence — Guided Breathing, Self-Inquiry & Stillness for Anxiety Relief</title>
+  <meta name="description" content="Free guided 10-minute sessions for anxiety relief, mindfulness, and present-moment awareness. No app, no login. Calming breathwork and self-inquiry for adults, teens, and children with ADHD or anxiety.">
+  <meta name="keywords" content="anxiety relief, mindfulness, present moment, self-inquiry, breathing exercises, ADHD focus, kids meditation, mental wellbeing, reduce anxiety, breathwork, stillness, guided meditation, attention training, child anxiety, teen mindfulness, box breathing">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://yoursite.com/">
+
+  <!-- OPEN GRAPH -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Presence — Guided Breathing & Stillness for Anxiety Relief">
+  <meta property="og:description" content="Ten minutes of guided breathing, self-inquiry, and stillness. Free. No login. Calming sessions for anxiety, ADHD, and present-moment awareness for all ages.">
+  <meta property="og:url" content="https://yoursite.com/">
+  <meta property="og:site_name" content="Presence">
+
+  <!-- TWITTER CARD -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Presence — Return to the Only Moment That Is Real">
+  <meta name="twitter:description" content="Free 10-minute guided sessions for anxiety relief, ADHD calm, and present-moment stillness. No app, no login.">
+
+  <!-- STRUCTURED DATA -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebSite",
+        "name":"Presence",
+        "url":"https://yoursite.com/",
+        "description":"Free guided breathwork, self-inquiry, and stillness sessions for anxiety relief, ADHD focus, and present-moment awareness."
+      },
+      {
+        "@type":"MedicalWebPage",
+        "name":"Presence — Breathwork and Mindfulness for Anxiety",
+        "url":"https://yoursite.com/",
+        "description":"Guided breathing and mindfulness practices for anxiety, ADHD, and mental wellbeing in adults and children.",
+        "audience":[
+          {"@type":"PeopleAudience","audienceType":"Adults with anxiety"},
+          {"@type":"PeopleAudience","audienceType":"Children and teens with ADHD"},
+          {"@type":"PeopleAudience","audienceType":"Parents seeking mindfulness tools for children"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg:         #F7F4ED;
+      --bg2:        #EAE6DA;
+      --ink:        #241D12;
+      --muted:      #7A6D5C;
+      --accent:     #6F7F63;
+      --warm:       #B8845A;
+      --orb-hi:     #A2B494;
+      --orb-lo:     #4E6143;
+      --dark:       #0E0D0B;
+      --dark-txt:   #DDD5C3;
+      --border:     rgba(36,29,18,0.09);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);font-weight:300;line-height:1.75;overflow-x:hidden}
+
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1.4rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(247,244,237,.87);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
+    .nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;letter-spacing:.06em;color:var(--ink);text-decoration:none}
+    .nav-links{display:flex;gap:2.5rem;list-style:none}
+    .nav-links a{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .3s}
+    .nav-links a:hover{color:var(--ink)}
+
+    /* HERO */
+    .hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(111,127,99,.07) 0%,transparent 68%);pointer-events:none}
+    .eyebrow{font-size:.65rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:2rem}
+    .orb-wrap{width:148px;height:148px;margin:0 auto 2.5rem;position:relative;cursor:pointer}
+    .orb-ring{position:absolute;inset:-14px;border-radius:50%;border:1px solid rgba(111,127,99,.18);animation:rpulse 7s ease-in-out infinite}
+    .orb-ring2{position:absolute;inset:-30px;border-radius:50%;border:1px solid rgba(111,127,99,.09);animation:rpulse 7s ease-in-out infinite .7s}
+    .orb{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 38% 34%,var(--orb-hi),var(--orb-lo));box-shadow:0 0 55px rgba(111,127,99,.28),0 0 110px rgba(111,127,99,.1);animation:breathe 8s ease-in-out infinite}
+    @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+    @keyframes rpulse{0%,100%{transform:scale(1);opacity:.5}50%{transform:scale(1.14);opacity:1}}
+    .hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6.5vw,5.2rem);font-weight:300;line-height:1.08;max-width:680px;margin-bottom:1.4rem}
+    .hero h1 em{font-style:italic;color:var(--accent)}
+    .hero p.sub{font-size:.88rem;color:var(--muted);max-width:380px;margin:0 auto 3.5rem;line-height:1.9}
+    .begin-btn{position:relative;overflow:hidden;display:inline-block;padding:.9rem 2.6rem;border:1px solid var(--ink);background:transparent;color:var(--ink);font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:color .4s}
+    .begin-btn::before{content:'';position:absolute;inset:0;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+    .begin-btn:hover::before{transform:scaleX(1)}
+    .begin-btn:hover{color:var(--bg)}
+    .begin-btn span{position:relative;z-index:1}
+    .scroll-cue{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;opacity:.35}
+    .scroll-cue span{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase}
+    .scroll-line{width:1px;height:36px;background:linear-gradient(to bottom,var(--ink),transparent);animation:sdrop 2.2s ease-in-out infinite}
+    @keyframes sdrop{0%,100%{opacity:1}50%{opacity:.3}}
+
+    /* SECTIONS */
+    .sec-inner{max-width:980px;margin:0 auto}
+    .sec-label{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:.9rem;display:block}
+
+    /* HOW */
+    .how{padding:7rem 2rem;background:var(--bg2)}
+    .how-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+    .how-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;line-height:1.2;margin-bottom:1.2rem}
+    .how-text p{font-size:1rem;color:var(--muted);margin-bottom:.9rem;line-height:1.9}
+    .phases{display:flex;flex-direction:column;gap:1.8rem}
+    .ph-item{display:flex;gap:1.4rem;align-items:flex-start}
+    .ph-num{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:300;color:rgba(111,127,99,.25);line-height:1;min-width:2.2rem;flex-shrink:0}
+    .ph-body h4{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;margin-bottom:.3rem}
+    .ph-body p{font-size:.95rem;color:var(--muted);line-height:1.8}
+    .ph-time{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.25rem;display:block}
+
+    /* BLOG */
+    .blog{padding:7rem 2rem}
+    .blog-intro{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;flex-wrap:wrap;gap:1rem}
+    .blog-intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);font-weight:300;line-height:1.2;max-width:420px}
+    .blog-intro p{font-size:.96rem;color:var(--muted);max-width:300px;line-height:1.85}
+    .blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem}
+    .blog-card{border:1px solid var(--border);padding:2rem 1.8rem;cursor:pointer;transition:all .35s;background:rgba(255,255,255,.45);position:relative;overflow:hidden}
+    .blog-card::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.4,0,.2,1)}
+    .blog-card:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(36,29,18,.07)}
+    .blog-card:hover::before{transform:scaleX(1)}
+    .blog-tag{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--warm);margin-bottom:.7rem;display:block}
+    .blog-card h3{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;line-height:1.3;margin-bottom:.7rem}
+    .blog-card p{font-size:.9rem;color:var(--muted);line-height:1.75}
+    .read-more{display:inline-block;margin-top:1.2rem;font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+
+    /* SUPPORT */
+    .support{padding:7rem 2rem;background:var(--bg2);text-align:center}
+    .support h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;margin-bottom:1rem}
+    .support .sdesc{font-size:.85rem;color:var(--muted);max-width:360px;margin:0 auto 2.8rem;line-height:1.85}
+    .support-btn{display:inline-block;padding:1rem 2.8rem;background:var(--accent);color:#fff;font-family:'Jost',sans-serif;font-size:.72rem;font-weight:400;letter-spacing:.18em;text-transform:uppercase;text-decoration:none;transition:all .35s;border:none;cursor:pointer}
+    .support-btn:hover{background:var(--orb-lo);transform:translateY(-2px)}
+    .support-note{font-size:.7rem;color:var(--muted);margin-top:1.2rem;opacity:.65}
+
+    /* FOOTER */
+    footer{padding:2rem 3rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;font-size:.72rem;color:var(--muted);flex-wrap:wrap;gap:.8rem}
+    .foot-logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:400;color:var(--ink)}
+
+    /* ═══════════════════════════════════════════
+       SESSION OVERLAY
+       CSS Grid: 3 explicit rows so content
+       can never bleed between zones.
+    ═══════════════════════════════════════════ */
+    #session{
+      position:fixed;inset:0;z-index:900;
+      background:var(--dark);
+      /* hidden by default */
+      display:none;
+      /* 3-row grid: topbar / body / controls */
+      grid-template-rows:70px 1fr 70px;
+      grid-template-columns:1fr;
+    }
+    #session.active{display:grid}
+
+    /* ROW 1 — timer + phase dots */
+    .s-topbar{
+      grid-row:1;grid-column:1;
+      display:flex;align-items:center;
+      justify-content:space-between;
+      padding:0 2.2rem;
+    }
+    .pdots{display:flex;gap:.5rem;align-items:center}
+    .pdot{width:30px;height:2px;border-radius:2px;background:rgba(221,213,195,.12);transition:background .7s}
+    .pdot.on{background:var(--accent)}
+    .s-timer{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;color:rgba(221,213,195,.28);letter-spacing:.04em}
+
+    /* ROW 2 — phase label + orb + text (one slot, no overlap) */
+    .s-body{
+      grid-row:2;grid-column:1;
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      padding:0 2rem;
+      overflow:hidden;   /* safety: nothing escapes this row */
+    }
+    .s-phase-lbl{
+      font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;
+      color:rgba(111,127,99,.6);
+      margin-bottom:2rem;flex-shrink:0;
+    }
+
+    /* Orb */
+    .s-orb-wrap{position:relative;width:190px;height:190px;flex-shrink:0}
+    .s-ring{position:absolute;border-radius:50%;border:1px solid rgba(111,127,99,.1)}
+    .s-ring1{inset:-18px;animation:srp 10s ease-in-out infinite}
+    .s-ring2{inset:-38px;animation:srp 10s ease-in-out infinite 1.2s}
+    @keyframes srp{0%,100%{transform:scale(1);opacity:.3}50%{transform:scale(1.1);opacity:.75}}
+    .s-orb{width:100%;height:100%;border-radius:50%;background:radial-gradient(circle at 38% 34%,var(--orb-hi),var(--orb-lo));box-shadow:0 0 80px rgba(111,127,99,.28),0 0 200px rgba(111,127,99,.1)}
+    .s-orb.inhaling{animation:orb-in  5s ease-in-out forwards}
+    .s-orb.exhaling{animation:orb-out 5s ease-in-out forwards}
+    .s-orb.holding {animation:none;transform:scale(1.16)} /* stays big during hold */
+    .s-orb.resting {animation:none;transform:scale(0.82)} /* stays small during rest */
+    .s-orb.idle    {animation:orb-idle 10s ease-in-out infinite}
+    @keyframes orb-in  {from{transform:scale(0.82)}to{transform:scale(1.16)}}
+    @keyframes orb-out {from{transform:scale(1.16)}to{transform:scale(0.82)}}
+    @keyframes orb-idle{0%,100%{transform:scale(0.93)}50%{transform:scale(1.07)}}
+
+    /*
+      TEXT SLOT — fixed height so layout never shifts.
+      Exactly ONE child is visible at any time via .mode-* classes.
+    */
+    .s-text-slot{
+      margin-top:2.2rem;
+      width:100%;max-width:500px;
+      height:108px;                    /* reserve fixed space */
+      display:flex;flex-direction:column;
+      align-items:center;justify-content:center;
+      flex-shrink:0;
+      /* overflow:hidden; — not needed but safe */
+    }
+    /* all children hidden by default */
+    .s-bi,.s-bc,.s-iq,.s-st{
+      display:none;
+      text-align:center;
+      transition:opacity .5s;
+    }
+    /* breath mode */
+    .mode-breath .s-bi,.mode-breath .s-bc{display:block}
+    /* inquiry mode */
+    .mode-inquiry .s-iq{display:block}
+    /* stillness mode */
+    .mode-still .s-st{display:block}
+
+    .s-bi{
+      font-family:'Cormorant Garamond',serif;
+      font-size:2rem;font-weight:300;
+      color:var(--dark-txt);
+      letter-spacing:.04em;
+    }
+    .s-bc{
+      font-size:.58rem;letter-spacing:.28em;
+      text-transform:uppercase;
+      color:rgba(221,213,195,.28);
+      margin-top:.5rem;
+    }
+    .s-iq{
+      font-family:'Cormorant Garamond',serif;
+      font-size:1.4rem;font-weight:300;font-style:italic;
+      color:rgba(221,213,195,.7);
+      line-height:1.55;
+      max-width:460px;
+    }
+    .s-st{
+      font-size:.62rem;letter-spacing:.36em;
+      text-transform:uppercase;
+      color:rgba(221,213,195,.18);
+    }
+
+    /* ROW 3 — sound + end */
+    .s-controls{
+      grid-row:3;grid-column:1;
+      display:flex;align-items:center;justify-content:center;
+      gap:2rem;padding:0 2rem;
+    }
+    .s-btn{background:none;border:1px solid rgba(221,213,195,.18);color:rgba(221,213,195,.38);padding:.5rem 1.4rem;font-family:'Jost',sans-serif;font-size:.66rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .3s}
+    .s-btn:hover{border-color:rgba(221,213,195,.5);color:rgba(221,213,195,.8)}
+    .snd-toggle{display:flex;align-items:center;gap:.5rem;color:rgba(221,213,195,.28);font-size:.64rem;letter-spacing:.1em;cursor:pointer;user-select:none;transition:color .3s}
+    .snd-toggle:hover{color:rgba(221,213,195,.6)}
+    .snd-dot{width:7px;height:7px;border-radius:50%;background:rgba(111,127,99,.3);transition:all .35s}
+    .snd-dot.on{background:var(--accent);box-shadow:0 0 7px var(--accent)}
+
+    /* ARTICLE MODAL */
+    #art-modal{position:fixed;inset:0;z-index:600;background:var(--bg);display:none;overflow-y:auto;padding:5rem 2rem}
+    #art-modal.open{display:block}
+    .art-inner{max-width:640px;margin:0 auto}
+    .art-back{background:none;border:none;font-family:'Jost',sans-serif;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);cursor:pointer;display:inline-flex;align-items:center;gap:.5rem;margin-bottom:3rem;transition:color .3s}
+    .art-back:hover{color:var(--ink)}
+    .art-inner h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.4rem);font-weight:300;line-height:1.12;margin-bottom:1.2rem}
+    .art-meta{font-size:.72rem;letter-spacing:.1em;color:var(--muted);margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border)}
+    .art-inner h2{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:400;margin:2.5rem 0 .8rem}
+    .art-inner p{font-size:1.05rem;color:var(--muted);line-height:1.9;margin-bottom:1.1rem}
+    .art-inner blockquote{border-left:2px solid var(--accent);padding-left:1.5rem;margin:2rem 0;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.32rem;color:var(--ink);line-height:1.55}
+
+    /* SCROLL REVEAL */
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .85s ease,transform .85s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .d1{transition-delay:.15s}.d2{transition-delay:.28s}.d3{transition-delay:.41s}
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+      nav{padding:1.1rem 1.4rem}
+      .nav-links{gap:1.5rem}
+      .how-grid{grid-template-columns:1fr;gap:3rem}
+      .s-topbar{padding:0 1.2rem}
+      .s-timer{font-size:1.5rem}
+      .s-orb-wrap{width:148px;height:148px}
+      .s-text-slot{height:96px}
+      .s-bi{font-size:1.65rem}
+      .s-iq{font-size:1.15rem}
+      footer{flex-direction:column;text-align:center}
+      .blog-intro{flex-direction:column}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#top" class="nav-logo">Presence</a>
+  <ul class="nav-links">
+    <li><a href="#practice">Practice</a></li>
+    <li><a href="#writings">Writings</a></li>
+    <li><a href="#support">Support</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <p class="eyebrow">A space for stillness</p>
+  <div class="orb-wrap" onclick="beginSession()" title="Begin session" role="button" aria-label="Begin guided stillness session">
+    <div class="orb-ring2"></div>
+    <div class="orb-ring"></div>
+    <div class="orb"></div>
+  </div>
+  <h1>Return to the<br><em>only moment</em><br>that is real</h1>
+  <p class="sub">Ten minutes of guided breathing, self-inquiry, and stillness. No app. No account. Proven to ease anxiety and reconnect you with what you are.</p>
+  <button class="begin-btn" onclick="beginSession()"><span>Begin Session</span></button>
+  <div class="scroll-cue" aria-hidden="true">
+    <span>Explore</span><div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="practice" aria-label="How the practice works">
+  <div class="sec-inner">
+    <div class="how-grid">
+      <div class="how-text">
+        <span class="sec-label reveal">How it works</span>
+        <h2 class="reveal">Three phases.<br>One destination.</h2>
+        <p class="reveal d1">Each session moves through three phases — designed to quiet the nervous system, dissolve the thinking mind, and reveal the awareness that was always here.</p>
+        <p class="reveal d2">Used regularly, this practice reduces anxiety, improves focus (helpful for ADHD), and builds a stable inner calm that carries into daily life for adults and children alike.</p>
+      </div>
+      <div class="phases">
+        <div class="ph-item reveal">
+          <div class="ph-num">1</div>
+          <div class="ph-body">
+            <span class="ph-time">0 – 2 minutes</span>
+            <h4>Settle &amp; Breathe</h4>
+            <p>Box breathing — five counts in, five hold, five out, five rest — activates the parasympathetic nervous system, calming the anxious mind and grounding attention in the body.</p>
+          </div>
+        </div>
+        <div class="ph-item reveal d1">
+          <div class="ph-num">2</div>
+          <div class="ph-body">
+            <span class="ph-time">2 – 5 minutes</span>
+            <h4>Self-Inquiry</h4>
+            <p>Questions from the tradition of Ramana Maharshi appear one by one. "Who is aware right now?" Not a puzzle — a mirror to look into.</p>
+          </div>
+        </div>
+        <div class="ph-item reveal d2">
+          <div class="ph-num">3</div>
+          <div class="ph-body">
+            <span class="ph-time">5 – 10 minutes</span>
+            <h4>Open Stillness</h4>
+            <p>Nothing is asked. The orb breathes. You rest as what you are — aware, whole, and already home.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="writings" aria-label="Articles on wellbeing, anxiety, ADHD and present-moment awareness">
+  <div class="sec-inner">
+    <div class="blog-intro">
+      <div>
+        <span class="sec-label reveal">Writings</span>
+        <h2 class="reveal">On presence, anxiety,<br>and the end of suffering</h2>
+      </div>
+      <p class="reveal">Short honest essays for adults, parents, and teenagers — including guidance on anxiety, ADHD, and helping children find stillness.</p>
+    </div>
+    <div class="blog-grid" id="blog-grid" role="list"></div>
+  </div>
+</section>
+
+<!-- SUPPORT -->
+<section class="support" id="support" aria-label="Support this project">
+  <div class="sec-inner">
+    <span class="sec-label reveal">Keep it free</span>
+    <h2 class="reveal">This will always<br>be free.</h2>
+    <p class="sdesc reveal">If a session brought you some peace, you are welcome to offer a small contribution. There is no obligation — ever.</p>
+    <a href="https://ko-fi.com/prashanth78130" target="_blank" rel="noopener noreferrer" class="support-btn">Offer a Contribution</a>
+    <p class="support-note">Voluntary offering · Not a subscription · No account needed</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-logo">Presence</span>
+  <span>Breathwork · Self-Inquiry · Stillness</span>
+  <span>© 2025 Presence · Free, always</span>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     SESSION OVERLAY
+     3-row CSS grid — physical separation enforced
+═══════════════════════════════════════════ -->
+<div id="session" role="dialog" aria-modal="true" aria-label="Guided session">
+
+  <!-- ROW 1: progress dots + timer -->
+  <div class="s-topbar">
+    <div class="pdots" aria-hidden="true">
+      <div class="pdot" id="pd0"></div>
+      <div class="pdot" id="pd1"></div>
+      <div class="pdot" id="pd2"></div>
+    </div>
+    <div class="s-timer" id="s-timer">10:00</div>
+  </div>
+
+  <!-- ROW 2: phase label, orb, single text slot -->
+  <div class="s-body">
+    <p class="s-phase-lbl" id="s-phase" aria-live="polite">Settle · Breathe</p>
+
+    <div class="s-orb-wrap" aria-hidden="true">
+      <div class="s-ring s-ring1"></div>
+      <div class="s-ring s-ring2"></div>
+      <div class="s-orb idle" id="s-orb"></div>
+    </div>
+
+    <!--
+      ONE text slot. Three possible modes set via class:
+        .mode-breath  → s-bi (instruction) + s-bc (count) visible
+        .mode-inquiry → s-iq (question) visible
+        .mode-still   → s-st (stillness phrase) visible
+      Nothing else is ever shown; no overlap is possible.
+    -->
+    <div class="s-text-slot mode-breath" id="s-slot" aria-live="polite">
+      <div class="s-bi" id="s-bi">Breathe in</div>
+      <div class="s-bc" id="s-bc">1 · 2 · 3 · 4 · 5</div>
+      <div class="s-iq" id="s-iq"></div>
+      <div class="s-st" id="s-st">Rest as what you are</div>
+    </div>
+  </div>
+
+  <!-- ROW 3: sound toggle + end -->
+  <div class="s-controls">
+    <div class="snd-toggle" id="snd-toggle" onclick="toggleSound()" role="button" tabindex="0" aria-label="Toggle ambient sound">
+      <div class="snd-dot on" id="snd-dot"></div>
+      <span id="snd-lbl">Sound on</span>
+    </div>
+    <button class="s-btn" onclick="endSession()">End Session</button>
+  </div>
+</div>
+
+<!-- ARTICLE MODAL -->
+<div id="art-modal" role="dialog" aria-modal="true" aria-label="Article">
+  <div class="art-inner">
+    <button class="art-back" onclick="closeArticle()">← Back to writings</button>
+    <div id="art-body"></div>
+  </div>
+</div>
+
+<script>
+/* ─────────────────────────────────────────────
+   ARTICLES DATA
+───────────────────────────────────────────── */
+const ARTICLES = [
+  {
+    tag:"Self-Inquiry", time:"5 min",
+    title:"Who Is Aware Right Now?",
+    excerpt:"The question is not a riddle — it is a mirror. When you turn attention back on itself, something shifts permanently.",
+    keywords:"self-inquiry, awareness, present moment, anxiety relief, Ramana Maharshi",
+    date:"2025-01-15",
+    body:`<h1>Who Is Aware Right Now?</h1>
+<p class="art-meta">Self-Inquiry · 5 min read</p>
+<p>There is a question that has been asked across contemplative traditions for millennia, and yet when it lands in the right moment — sincerely, not as a philosophical puzzle — it can stop thought entirely.</p>
+<p>The question is simply: <em>Who is aware?</em></p>
+<h2>The Mirror That Cannot Be Seen</h2>
+<p>We place attention outward constantly — on sounds, sensations, thoughts, plans, fears. Something happens, attention rushes toward it, experience arises. This is the ordinary movement of the mind.</p>
+<p>But what if you turned that attention around? Not toward a thought about yourself, but toward the very capacity that is aware of thoughts?</p>
+<blockquote>The one who is aware of thoughts cannot itself be a thought.</blockquote>
+<p>A hand cannot grab itself. And yet something is undeniably here — reading these words, aware of this moment. When you look for the boundary of that awareness, you find you cannot locate it. No edges. And yet it is the most present thing in all of experience.</p>
+<h2>The Practice</h2>
+<p>Sit quietly. Close your eyes. Notice a thought arise. Now ask sincerely: who is aware of that thought? Do not answer with another thought. Simply rest in the question like a bell held in the air. You may notice a quality of openness — of something that has no centre and no boundary.</p>
+<p>That spaciousness is not an experience that comes and goes. It is what you are before experience begins.</p>
+<h2>Why This Matters for Anxiety</h2>
+<p>Anxiety lives in identification with the thinking mind — with the story of a self that might fail, be rejected, or lose something precious. When you discover that what you fundamentally are is the awareness in which thinking arises — not the thoughts themselves — the very foundation of chronic anxiety begins to dissolve. This is not distraction or suppression. It is recognition.</p>`
+  },
+  {
+    tag:"Anxiety", time:"4 min",
+    title:"How the Present Moment Ends Anxiety",
+    excerpt:"Anxiety is always about a future that hasn't arrived. The present moment is the only place it cannot follow you.",
+    keywords:"anxiety relief, present moment, mindfulness, mental wellbeing, stress reduction, breathing",
+    date:"2025-02-03",
+    body:`<h1>How the Present Moment Ends Anxiety</h1>
+<p class="art-meta">Anxiety · 4 min read</p>
+<p>Notice this carefully: anxiety is always about something that has not happened yet. A conversation tomorrow. A result next week. An imagined rejection. Even when anxiety seems to be about something happening right now, look more carefully — it is the <em>imagined consequence</em> that frightens, not the raw present moment itself.</p>
+<p>Anxiety lives in the future. And the present moment contains no future.</p>
+<h2>A Simple Test, Right Now</h2>
+<p>Before reading further, pause. Where is your attention? Is it here, or has it drifted — to something you need to do, something unresolved, something you are dreading? This wandering is not failure. It is simply what untrained attention does by default.</p>
+<blockquote>In this exact moment — not the anticipated future — is there actually a problem?</blockquote>
+<p>Ask this sincerely. Right now, this second — what is actually here?</p>
+<h2>The Practice of Return</h2>
+<p>Presence is not a state you achieve and hold. It is a direction — a returning. Every time you notice you have been pulled into thought, that noticing is itself presence. You cannot notice a thought from inside the thought. The noticing is already freedom.</p>
+<p>The breath is always present — it cannot exist in the past or future. Sound is always present. These are anchors not because they are special, but because they are immune to the anxious mind's favourite territory: what is not here yet.</p>
+<h2>What Remains</h2>
+<p>When anxiety arises and you meet it with presence — not fighting, not running, just being with it — it loses density. The storyline cannot sustain itself without the fuel of future-thinking. What remains is usually just a sensation in the body, which is far more workable than a spiral of narrative. This is something you can discover in the next ten minutes.</p>`
+  },
+  {
+    tag:"Children & ADHD", time:"6 min",
+    title:"Stillness for Children: A Parent's Guide",
+    excerpt:"Children are natural mystics — already close to the present. Small, playful practices anchor them when anxiety or ADHD pulls attention away.",
+    keywords:"children anxiety, ADHD kids, kids mindfulness, child mental health, calm children, attention training, present moment children, ADHD breathwork",
+    date:"2025-02-20",
+    body:`<h1>Stillness for Children: A Parent's Guide</h1>
+<p class="art-meta">Children & ADHD · 6 min read</p>
+<p>Children are, in many ways, closer to the present moment than adults. A five-year-old has not yet built the elaborate mental architecture of regret and anticipation that traps adult attention. And yet modern childhood — screen stimulation, academic pressure, social comparison — is increasingly pulling children into exactly that trap.</p>
+<p>Anxiety in children is rising sharply. So is ADHD. These are not separate problems from the loss of present-moment awareness — they are symptoms of it.</p>
+<h2>What Children Already Know</h2>
+<p>Watch a child absorbed in play. Watch the way a toddler examines a leaf, or a child laughs — completely, with no part of them somewhere else. This is not a technique. This is their natural state. The work for parents is not to teach presence, but to protect what is already there, and to gently restore it when it is lost.</p>
+<blockquote>A child who can return to the present moment has a tool that no amount of academic achievement can provide.</blockquote>
+<h2>Simple Practices (Ages 5–14)</h2>
+<p><strong>The Breathing Buddy:</strong> Have younger children lie on their back and place a small stuffed animal on their belly. Ask them to breathe so slowly that the toy gently rises and falls. Count five slow breaths together. This is box breathing in a form a five-year-old can access.</p>
+<p><strong>The 5-4-3-2-1 Game:</strong> When a child is anxious or scattered, gently ask them to name five things they can see, four they can touch, three they can hear, two they can smell, one they can taste. This activates the senses — which exist only in the present — and interrupts the anxiety loop.</p>
+<p><strong>The "What's Happening Now?" Check-in:</strong> Sit together for two minutes, close your eyes, and ask "what are you noticing right now?" Not feelings — sensations. The weight of your body. A sound in the room. The temperature of your hands. Teach children to be curious about what is directly here.</p>
+<h2>For Children with ADHD</h2>
+<p>ADHD is, in one frame, a difficulty sustaining voluntary attention — the mind slides toward whatever is more immediately stimulating. Mindfulness-based practices have significant research backing for ADHD: they strengthen the prefrontal cortex's ability to hold attention voluntarily, reduce impulsivity, and improve emotional regulation.</p>
+<p>The key for ADHD children is that the practice must be short and varied. Two minutes, not twenty. The breathing orb on this site works well — something to look at, breath to follow, no text to read. Consider doing a short session together as a parent-child ritual before homework or before sleep.</p>
+<h2>A Word for Parents</h2>
+<p>The most powerful thing you can offer your child is your own presence. Not advice, not achievement, not arranged activities — simply being here, undivided. Children feel the quality of a parent's attention with extraordinary accuracy. A present parent is a regulated nervous system in the room, and regulation is contagious.</p>`
+  },
+  {
+    tag:"Teen Wellbeing", time:"5 min",
+    title:"Why Teenagers Are Prone to Anxiety — And What Helps",
+    excerpt:"The teenage brain is physiologically predisposed to anxiety. Understanding why is the first step, and presence practice is one of the most effective tools available.",
+    keywords:"teen anxiety, teenager mental health, adolescent stress, teenage mindfulness, school anxiety, social anxiety teens, teen wellbeing, ADHD teens",
+    date:"2025-03-01",
+    body:`<h1>Why Teenagers Are Prone to Anxiety — And What Helps</h1>
+<p class="art-meta">Teen Wellbeing · 5 min read</p>
+<p>Anxiety is the most common mental health challenge among teenagers today, affecting an estimated one in three adolescents before the age of eighteen. This is not weakness. It is, in large part, biology.</p>
+<h2>The Adolescent Brain Under Renovation</h2>
+<p>Between roughly thirteen and twenty-four, the human brain undergoes profound restructuring. The limbic system — the seat of emotion, fear, and impulse — develops rapidly and early. The prefrontal cortex — responsible for perspective, regulation, and the recognition that "this feeling will pass" — matures slowly, typically not complete until the mid-twenties.</p>
+<p>The result: a period of life where emotional reactivity is high and regulatory capacity is still catching up. In a world of social media comparison, academic pressure, and uncertain futures, this creates the conditions for chronic anxiety.</p>
+<blockquote>Teenagers are not oversensitive. They have fully developed fear responses and still-developing brakes.</blockquote>
+<h2>Social Anxiety and the Comparing Mind</h2>
+<p>A teenager's social world is, neurologically, a survival environment. Social acceptance activates the same brain regions as physical safety. Social rejection activates the same regions as physical pain. The relentless comparative nature of social media — an infinite stream of curated other lives — is uniquely positioned to keep a teenage nervous system in chronic low-grade threat.</p>
+<h2>What Actually Helps</h2>
+<p>Presence practice — specifically breath-based practice and attention training — works for teenagers for reasons that map directly onto their neurology. Slow breathing downregulates the over-reactive limbic system. Attention training strengthens the prefrontal cortex's capacity to regulate emotion. Self-inquiry — asking who is actually experiencing this feeling — creates a relationship of observer to experience rather than total immersion in it.</p>
+<p>None of this requires a therapist's office or a subscription. It requires ten minutes, a quiet space, and willingness. The sessions here are a starting point — short, undemanding, and built around what actually works.</p>`
+  },
+  {
+    tag:"Breathing", time:"4 min",
+    title:"The Science of Slow Breathing",
+    excerpt:"Box breathing is applied physiology, not mysticism. The research on what it does to the anxious brain — and the ADHD brain — is remarkable.",
+    keywords:"box breathing, breathwork, anxiety relief, parasympathetic nervous system, ADHD breathwork, breathing exercise, slow breathing, HRV",
+    date:"2025-03-10",
+    body:`<h1>The Science of Slow Breathing</h1>
+<p class="art-meta">Breathing · 4 min read</p>
+<p>The breath is the only bodily function that is both automatic and voluntary. Your heart beats without your permission. But you can, at any moment, consciously change how you breathe. This dual nature is a doorway.</p>
+<h2>What Slow Breathing Does</h2>
+<p>When you breathe more slowly — around five to six breath cycles per minute, versus the typical fifteen to twenty — several things happen simultaneously. The extended exhale activates the vagus nerve, triggering the parasympathetic "rest and digest" system. Heart rate drops. Cortisol begins to fall. Heart rate variability — a direct marker of nervous system resilience — rises.</p>
+<blockquote>Six breaths per minute activates the body's built-in anxiety brake. Box breathing delivers exactly this.</blockquote>
+<p>Box breathing — five counts in, five hold, five out, five rest — produces roughly three full cycles per minute, within the range that triggers maximum parasympathetic activation. The counting gives the thinking mind something simple to do, preventing it from filling the silence with worry while the body resets.</p>
+<h2>Breathing and ADHD</h2>
+<p>Research into slow breathing and ADHD is early but promising. Controlled breathing exercises appear to improve working memory, reduce impulsivity, and support voluntary attention — all areas of difficulty in ADHD. The proposed mechanism: slow breathing increases prefrontal cortex activity, precisely the region that regulates executive function and impulse control.</p>
+<h2>Begin Right Now</h2>
+<p>You are already breathing. Can you feel it? The slight coolness on the inhale. The brief still point at the top of the breath, before the exhale begins. That still point is worth noticing — a small window onto the stillness that ten minutes of practice can reveal more fully.</p>`
+  },
+  {
+    tag:"True Self", time:"5 min",
+    title:"What You Are Before Thought",
+    excerpt:"There is something that does not come and go with thoughts. It is what you have always been — the awareness that watches everything.",
+    keywords:"true self, awareness, nondual, Advaita Vedanta, mental wellbeing, consciousness, identity, anxiety",
+    date:"2025-03-15",
+    body:`<h1>What You Are Before Thought</h1>
+<p class="art-meta">True Self · 5 min read</p>
+<p>Every thought you have ever had has arisen in something. Joy, fear, boredom, grief, wonder — each has appeared within an awareness that itself does not appear and disappear. This is not philosophy. It is something that can be verified directly, right now, if you are willing to look.</p>
+<h2>The Error at the Root of Suffering</h2>
+<p>From early childhood, through language and culture, we learn to identify with the <em>contents</em> of consciousness rather than consciousness itself. "I am anxious." "I am a failure." "I am not enough." The I attaches to whatever is arising — and when difficult things arise, it suffers as if it <em>were</em> those things.</p>
+<p>But what if what you fundamentally are is not a content, but the container? Not a wave, but the ocean in which waves appear?</p>
+<blockquote>You are not the thought that says "I am thinking." You are what knows the thought is there.</blockquote>
+<h2>The Direct Investigation</h2>
+<p>Right now, a thought may arise. There is awareness of that thought. That awareness is not itself a thought — because it is what the thought is appearing in. Try to find the edge of that awareness. Try to locate where it ends. When you look sincerely, you find no boundary. And yet it is undeniably present — the most obvious thing in all of experience, precisely because it is never absent.</p>
+<h2>Why This Dissolves Anxiety</h2>
+<p>Anxiety requires a self that can be threatened — a self that might fail or be judged. When you see that what you actually are is not that self but the awareness in which the self arises as thought, the very ground of anxiety dissolves. Not because the situation has changed. Because you have seen what you are, and what you are cannot be threatened by any situation.</p>`
+  }
+];
+
+/* ─────────────────────────────────────────────
+   RENDER BLOG CARDS + INJECT ARTICLE JSON-LD
+───────────────────────────────────────────── */
+const grid = document.getElementById('blog-grid');
+const dclasses = ['','d1','d2','d3'];
+
+ARTICLES.forEach((a, i) => {
+  /* card */
+  const card = document.createElement('article');
+  card.className = `blog-card reveal ${dclasses[i%4]}`;
+  card.setAttribute('role','listitem');
+  card.innerHTML = `<span class="blog-tag">${a.tag}</span>
+<h3>${a.title}</h3>
+<p>${a.excerpt}</p>
+<span class="read-more">${a.time} read →</span>`;
+  card.addEventListener('click', () => openArticle(i));
+  grid.appendChild(card);
+
+  /* JSON-LD per article */
+  const s = document.createElement('script');
+  s.type = 'application/ld+json';
+  s.textContent = JSON.stringify({
+    "@context":"https://schema.org","@type":"Article",
+    "headline":a.title,"description":a.excerpt,
+    "datePublished":a.date,"keywords":a.keywords,
+    "publisher":{"@type":"Organization","name":"Presence","url":"https://yoursite.com"},
+    "url":`https://yoursite.com/#art-${i}`,
+    "mainEntityOfPage":`https://yoursite.com/#art-${i}`
+  });
+  document.head.appendChild(s);
+});
+
+function openArticle(i) {
+  document.getElementById('art-body').innerHTML = ARTICLES[i].body;
+  const m = document.getElementById('art-modal');
+  m.classList.add('open'); m.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+}
+function closeArticle() {
+  document.getElementById('art-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+/* ─────────────────────────────────────────────
+   SCROLL REVEAL
+───────────────────────────────────────────── */
+const obs = new IntersectionObserver(
+  entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+  { threshold: 0.08 }
+);
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+/* ─────────────────────────────────────────────
+   WEB AUDIO — warm earth-tone drone
+   81 Hz fundamental + harmonics, low-pass filtered,
+   very slow 9-second fade-in.
+───────────────────────────────────────────── */
+let AC, masterGain, soundOn = true;
+
+function initAudio() {
+  if (AC) { if (AC.state === 'suspended') AC.resume(); return; }
+  try {
+    AC = new (window.AudioContext || window.webkitAudioContext)();
+    masterGain = AC.createGain();
+    masterGain.gain.setValueAtTime(0, AC.currentTime);
+
+    /* warm low-pass */
+    const lp = AC.createBiquadFilter();
+    lp.type = 'lowpass';
+    lp.frequency.setValueAtTime(480, AC.currentTime);
+    lp.Q.setValueAtTime(0.6, AC.currentTime);
+    masterGain.connect(lp);
+    lp.connect(AC.destination);
+
+    /* 81 Hz root (very warm) + 4 partials, slightly detuned for chorus warmth */
+    [
+      {f:81,  g:0.075, d:0  },
+      {f:162, g:0.048, d:-3 },
+      {f:243, g:0.030, d: 3 },
+      {f:324, g:0.018, d:-2 },
+      {f:405, g:0.010, d: 2 }
+    ].forEach(({f,g,d}) => {
+      const o = AC.createOscillator(), gn = AC.createGain();
+      o.type = 'sine';
+      o.frequency.setValueAtTime(f, AC.currentTime);
+      o.detune.setValueAtTime(d, AC.currentTime);
+      gn.gain.setValueAtTime(g, AC.currentTime);
+      o.connect(gn); gn.connect(masterGain);
+      o.start();
+    });
+
+    /* imperceptibly slow fade-in: 9 seconds */
+    masterGain.gain.linearRampToValueAtTime(0.42, AC.currentTime + 9);
+  } catch(e) { console.warn('Web Audio:', e); }
+}
+
+function stopAudioFade() {
+  if (!masterGain) return;
+  masterGain.gain.linearRampToValueAtTime(0, AC.currentTime + 3.5);
+}
+
+function toggleSound() {
+  soundOn = !soundOn;
+  document.getElementById('snd-dot').className = 'snd-dot' + (soundOn ? ' on' : '');
+  document.getElementById('snd-lbl').textContent = soundOn ? 'Sound on' : 'Muted';
+  if (!masterGain) return;
+  masterGain.gain.linearRampToValueAtTime(soundOn ? 0.42 : 0, AC.currentTime + 1.8);
+}
+
+/* ─────────────────────────────────────────────
+   SESSION ENGINE
+───────────────────────────────────────────── */
+const TOTAL = 600; /* 10 minutes */
+
+/* Phase config */
+const PHASES = [
+  { end:120, name:'Settle · Breathe', mode:'breath'  },
+  { end:300, name:'Self-Inquiry',     mode:'inquiry' },
+  { end:600, name:'Open Stillness',   mode:'still'   }
+];
+
+/* 5-count box breathing — 20 s per cycle */
+const BSTEPS = [
+  { instr:'Breathe in',  orb:'inhaling', dur:5000, count:'1  ·  2  ·  3  ·  4  ·  5' },
+  { instr:'Hold',        orb:'holding',  dur:5000, count:'1  ·  2  ·  3  ·  4  ·  5' },
+  { instr:'Breathe out', orb:'exhaling', dur:5000, count:'1  ·  2  ·  3  ·  4  ·  5' },
+  { instr:'Rest',        orb:'resting',  dur:5000, count:'1  ·  2  ·  3  ·  4  ·  5' }
+];
+
+const INQUIRIES = [
+  "Who is aware of this moment?",
+  "What is here before thoughts arise?",
+  "Can you find the one who is thinking?",
+  "Are you the thought, or what watches it?",
+  "What remains when a thought dissolves?",
+  "Where does the next thought come from?",
+  "Is there a gap between thoughts right now?",
+  "What is the space in which all of this appears?",
+  "Can you find the edge of this awareness?",
+  "Who is noticing the silence right now?"
+];
+
+let elapsed=0, phaseIdx=-1, bStep=0, inquiryIdx=0;
+let sessTimer=null, breathTimer=null, inquiryTimer=null;
+
+function $id(id){ return document.getElementById(id); }
+
+/* Set text-slot mode (controls which child is visible via CSS) */
+function setMode(m){ $id('s-slot').className = 's-text-slot mode-' + m; }
+
+/* Update countdown */
+function updateClock(){
+  const r = Math.max(0, TOTAL - elapsed);
+  $id('s-timer').textContent = String(Math.floor(r/60)).padStart(2,'0') + ':' + String(r%60).padStart(2,'0');
+}
+
+/* Phase enter */
+function enterPhase(idx){
+  phaseIdx = idx;
+  const ph = PHASES[idx];
+  $id('s-phase').textContent = ph.name;
+  ['pd0','pd1','pd2'].forEach((id,i) => $id(id).classList.toggle('on', i <= idx));
+  setMode(ph.mode);
+
+  if (idx === 0){
+    /* start breath cycle after short settle */
+    clearTimeout(breathTimer); clearInterval(inquiryTimer);
+    bStep = 0;
+    $id('s-orb').className = 's-orb idle';
+    setTimeout(doBreathStep, 700);
+
+  } else if (idx === 1){
+    clearTimeout(breathTimer); clearInterval(inquiryTimer);
+    $id('s-orb').className = 's-orb idle';
+    /* first question immediately */
+    inquiryIdx = 0;
+    showInquiry();
+    /* rotate every 22 seconds */
+    inquiryTimer = setInterval(showInquiry, 22000);
+
+  } else {
+    /* Open Stillness — just the orb and the whisper */
+    clearTimeout(breathTimer); clearInterval(inquiryTimer);
+    $id('s-orb').className = 's-orb idle';
+    /* fade in stillness phrase */
+    const st = $id('s-st');
+    st.style.opacity = '0';
+    setTimeout(() => { st.style.opacity = '1'; }, 600);
+  }
+}
+
+/* Breath step */
+function doBreathStep(){
+  if (phaseIdx !== 0) return;
+  const step = BSTEPS[bStep];
+
+  /* swap instruction with crossfade */
+  const bi = $id('s-bi'), bc = $id('s-bc');
+  bi.style.opacity = '0'; bc.style.opacity = '0';
+  setTimeout(() => {
+    bi.textContent = step.instr;
+    bc.textContent = step.count;
+    bi.style.opacity = '1'; bc.style.opacity = '1';
+  }, 280);
+
+  $id('s-orb').className = 's-orb ' + step.orb;
+  bStep = (bStep + 1) % BSTEPS.length;
+  breathTimer = setTimeout(doBreathStep, step.dur);
+}
+
+/* Inquiry question crossfade */
+function showInquiry(){
+  if (phaseIdx !== 1) return;
+  const q = INQUIRIES[inquiryIdx % INQUIRIES.length];
+  inquiryIdx++;
+  const el = $id('s-iq');
+  el.style.opacity = '0';
+  setTimeout(() => { el.textContent = q; el.style.opacity = '1'; }, 950);
+}
+
+/* BEGIN */
+function beginSession(){
+  initAudio();
+  elapsed=0; phaseIdx=-1; bStep=0; inquiryIdx=0;
+
+  $id('session').classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  updateClock();
+  enterPhase(0);
+
+  sessTimer = setInterval(() => {
+    elapsed++;
+    updateClock();
+    const np = elapsed < 120 ? 0 : elapsed < 300 ? 1 : 2;
+    if (np !== phaseIdx) enterPhase(np);
+    if (elapsed >= TOTAL) endSession();
+  }, 1000);
+}
+
+/* END */
+function endSession(){
+  clearInterval(sessTimer);
+  clearTimeout(breathTimer);
+  clearInterval(inquiryTimer);
+  stopAudioFade();
+
+  $id('session').classList.remove('active');
+  document.body.style.overflow = '';
+
+  /* reset for next session */
+  elapsed=0; phaseIdx=-1; bStep=0; inquiryIdx=0;
+  $id('s-timer').textContent = '10:00';
+  $id('s-orb').className = 's-orb idle';
+  $id('s-bi').textContent = 'Breathe in'; $id('s-bi').style.opacity='1';
+  $id('s-bc').style.opacity='1';
+  $id('s-iq').style.opacity='1'; $id('s-iq').textContent='';
+  $id('s-st').style.opacity='1';
+  setMode('breath');
+  ['pd0','pd1','pd2'].forEach(id => $id(id).classList.remove('on'));
+}
+
+/* KEYBOARD */
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){
+    if ($id('session').classList.contains('active')) endSession();
+    else if ($id('art-modal').classList.contains('open')) closeArticle();
+  }
+});
+</script>
+</body>
+</html>
